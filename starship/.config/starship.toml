@@ -1,0 +1,71 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+format = """
+[ ➜](bold white) $username $directory $python $git_branch $git_status $cmd_duration $fill $time
+$battery$character
+"""
+
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[✗](bold red) '
+
+[cmd_duration]
+format = "took [$duration]($style)"
+
+[directory]
+read_only = " "
+format = '[$path]($style)[$read_only]($read_only_style)'
+truncation_length = 3
+
+[fill]
+symbol = " "
+
+[git_branch]
+format = 'on [$symbol$branch]($style)'
+symbol = " "
+
+# [git_commit]
+# commit_hash_length = 30
+# tag_disabled = false
+# tag_max_candidates = 0
+# disabled = false
+# tag_symbol = '🔖 '
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+ahead = "⇡ $count "
+behind = "⇣ $count "
+deleted = " $count "
+diverged = " $count "
+stashed = "📦 $count "
+modified = "פֿ $count "
+staged = '[ $count ](green)'
+renamed = " $count "
+untracked = "🤷 ‍$count "
+style = "bold red"
+
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = '%T'
+utc_time_offset = '-5'
+
+[username]
+style_user = "bold red"
+show_always = true
+format = '[@$user:]($style)'
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+discharging_symbol = ' '
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = ' '
+
+[python]
+symbol = '👾 '
+pyenv_version_name = true
+python_binary = 'python3'
