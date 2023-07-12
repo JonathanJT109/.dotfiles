@@ -4,6 +4,15 @@ eval "$(starship init zsh)"
 
 export PATH="$HOME/.local/bin":$PATH
 
+source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+plugins=( 
+    git
+    zsh-autosuggestions
+    zsh-completions
+    zsh-syntax-highlighting
+)
+
 function runcpp() {
     local cpp_file="${1:-}"
     local cpp_version="${2:-17}"
@@ -53,7 +62,10 @@ function mdtm(){
     pandoc "${md_file}.md" -f markdown -o "${file_name}.pdf" --filter=mermaid-filter
 }
 
-plugins=( 
-    git
-    zsh-autosuggestions
-)
+
+alias nvim="~/nvim-linux64/bin/nvim"
+alias cloud="cd ~/../../mnt/c/Users/jonat/OneDrive\ -\ University\ of\ Indianapolis/"
+alias nvim_config="nvim ~/.config/nvim/lua/user"
+
+export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
