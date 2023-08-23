@@ -3,14 +3,14 @@
 eval "$(starship init zsh)"
 
 export PATH="$HOME/.local/bin":$PATH
+export ZSH=$HOME/.oh-my-zsh
 
-source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 plugins=( 
     git
     zsh-autosuggestions
     zsh-completions
-    zsh-syntax-highlighting
 )
 
 function runcpp() {
@@ -62,10 +62,12 @@ function mdtm(){
     pandoc "${md_file}.md" -f markdown -o "${file_name}.pdf" --filter=mermaid-filter
 }
 
+alias cloud="cd ~/Library/CloudStorage/OneDrive-UniversityofIndianapolis/"
 
-alias nvim="~/nvim-linux64/bin/nvim"
-alias cloud="cd ~/../../mnt/c/Users/jonat/OneDrive\ -\ University\ of\ Indianapolis/"
-alias nvim_config="nvim ~/.config/nvim/lua/user"
+# Windows Config
+# alias nvim="~/nvim-linux64/bin/nvim"
+# alias cloud="cd ~/../../mnt/c/Users/jonat/OneDrive\ -\ University\ of\ Indianapolis/"
+# alias nvim_config="nvim ~/.config/nvim/lua/user"
 
-export ZSH=$HOME/.oh-my-zsh
+source /Users/jgonz/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh

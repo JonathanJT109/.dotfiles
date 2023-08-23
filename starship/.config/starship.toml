@@ -1,7 +1,7 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 format = """
-[ ➜](bold white) $username $directory $python $git_branch $git_status $cmd_duration $fill $time
+[ ➜](bold white) $username $directory $rust $python $git_branch $git_status $cmd_duration $fill $time
 $battery$character
 """
 
