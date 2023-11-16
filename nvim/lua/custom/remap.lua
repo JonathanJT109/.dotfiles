@@ -18,3 +18,10 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<leader>y", [["+y]])
 
 vim.keymap.set("i", "jk", "<ESC>")
+
+vim.keymap.set("n", "<leader>pf", ":!black % .<CR>")
+
+-- Terminal
+vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]])
+vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]])
+vim.keymap.set("n", "<leader>t", [[<cmd>bel split | terminal<cr>]])

@@ -4,7 +4,7 @@
 -- See the kickstart.nvim README for more information
 return {
 	{
-		'ThePrimeagen/harpoon',
+		'theprimeagen/harpoon',
 		config = function()
 			local mark = require("harpoon.mark")
 			local ui = require("harpoon.ui")
@@ -51,4 +51,26 @@ return {
 	{
 		"onsails/lspkind-nvim",
 	},
+	{
+		"linux-cultist/venv-selector.nvim",
+		dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+		opts = {
+			-- Your options go here
+			-- name = "venv",
+			-- auto_refresh = false
+		},
+		event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+		keys = { {
+			-- Keymap to open VenvSelector to pick a venv.
+			"<leader>vs", "<cmd>:VenvSelect<cr>",
+			-- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+			"<leader>vc", "<cmd>:VenvSelectCached<cr>"
+		} }
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+		ft = { "markdown" },
+	}
 }
